@@ -43,8 +43,6 @@ public class App
                         String checkPinCodeRead = sc.nextLine();
                         if (safe.checkPinCode(checkPinCodeRead)) {
                             safe.showItems();
-                        } else {
-                            System.out.println("Väärä PIN-koodi!");
                         }
                         break;
 
