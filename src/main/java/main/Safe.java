@@ -36,4 +36,14 @@ public class Safe {
         }
         return;
     }
+    
+    public ArrayList<String> listItems(String inputPinCode) {
+        if (checkPinCode(inputPinCode)) {
+            return new ArrayList<>(this.safeFolder);
+        } else {
+            System.out.println("Väärä PIN-koodi!");
+            return new ArrayList<>();
+        }
+    }
+    
 }
