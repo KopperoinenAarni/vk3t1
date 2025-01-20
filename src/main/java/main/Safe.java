@@ -33,7 +33,7 @@ public class Safe {
     public void showItems() {
         for (String item : this.safeFolder) {
             System.out.println(item);
-            return;
         }
+        return;
     }
 }
