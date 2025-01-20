@@ -17,7 +17,7 @@ public class App
             private ArrayList<String> safeFolder = new ArrayList<>();
         
             public Safe(String pincode) {
-                this.pinCode = "0000";
+                this.pinCode = pincode;
                 this.safeFolder = new ArrayList<>();
             }
         
