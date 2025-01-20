@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -7,10 +8,46 @@ import java.util.Scanner;
 public class App 
 {
     public static void main( String[] args ){
-        Scanner sc = new Scanner(System.in);
-        
-        Safe safe = new Safe();
 
+        
+        Scanner sc = new Scanner(System.in);
+
+        class Safe {
+            private String pinCode;
+            private ArrayList<String> safeFolder = new ArrayList<>();
+        
+            public Safe(String pincode) {
+                this.pinCode = "0000";
+                this.safeFolder = new ArrayList<>();
+            }
+        
+            public void setPinCode(String newPinCode) {
+                this.pinCode = newPinCode;
+            }
+        
+            public boolean checkPinCode(String inputPinCode) {
+                if (inputPinCode.equals(this.pinCode)) {
+                    return true; 
+                } else {
+                    System.out.println("Väärä PIN-koodi!");
+                    return false;
+                }
+                
+            }
+        
+            public void addItem(String item) {
+                    this.safeFolder.add(item);
+                    }
+        
+            public void showItems() {
+                    for (String item : this.safeFolder) {
+                        System.out.println(item);
+                        }
+            }   
+        }
+        
+        
+        Safe safe = new Safe("0000");
         boolean exit = false;
         while (!exit) {
             System.out.println("1) Aseta PIN-koodi");
@@ -60,5 +97,6 @@ public class App
         }
         sc.close();
     }
+
 }
 
