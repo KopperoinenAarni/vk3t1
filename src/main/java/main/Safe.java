@@ -13,6 +13,7 @@ public class Safe {
 
     public void setPinCode(String newPinCode) {
         this.pinCode = newPinCode;
+        return;
     }
 
     public boolean checkPinCode(String inputPinCode) {
@@ -26,11 +27,13 @@ public class Safe {
 
     public void addItem(String item) {
         this.safeFolder.add(item);
+        return; 
     }
 
     public void showItems() {
         for (String item : this.safeFolder) {
             System.out.println(item);
+            return;
         }
     }
 }
